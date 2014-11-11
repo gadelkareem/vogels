@@ -387,7 +387,7 @@ BlogPost
 
 BlogPost
   .query('werner@example.com')
-  .where('title').between(['foo@example.com', 'test@example.com'])
+  .where('title').between('foo@example.com', 'test@example.com')
   .exec();
 ```
 
@@ -640,7 +640,7 @@ Account
 // between
 Account
   .scan()
-  .where('name').between(['Bar', 'Foo'])
+  .where('name').between('Bar', 'Foo')
   .exec();
 
 // multiple filters

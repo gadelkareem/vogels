@@ -86,21 +86,21 @@ describe('vogels', function () {
     it('should configure set dynamodb driver', function () {
       var Account = vogels.define('Account');
 
-      var dynamodb = helper.mockDynamoDB();
+      var dynamodb = helper.realDynamoDB();
       Account.config({dynamodb: dynamodb });
 
-      Account.dynamodb.should.eq(dynamodb);
+      Account.docClient.should.eq(dynamodb);
     });
 
     it('should globally set dynamodb driver for all models', function () {
       var Account = vogels.define('Account');
       var Post = vogels.define('Post');
 
-      var dynamodb = helper.mockDynamoDB();
+      var dynamodb = helper.realDynamoDB();
       vogels.dynamoDriver(dynamodb);
 
-      Account.dynamodb.should.eq(dynamodb);
-      Post.dynamodb.should.eq(dynamodb);
+      Account.docClient.should.eq(dynamodb);
+      Post.docClient.should.eq(dynamodb);
     });
 
     it('should continue to use globally set dynamodb driver', function () {
@@ -109,7 +109,7 @@ describe('vogels', function () {
 
       var Account = vogels.define('Account');
 
-      Account.dynamodb.should.eq(dynamodb);
+      Account.docClient.should.eq(dynamodb);
     });
 
   });

@@ -1,11 +1,11 @@
 {
   "name": "vogels",
-  "version": "0.12.0",
+  "version": "1.0.0-rc1",
   "author": "Ryan Fitzgerald <ryan@codebrewstudios.com>",
   "description": "DynamoDB data mapper",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "make test"
   },
   "repository": "git://github.com/ryanfitz/vogels.git",
   "keywords": [
@@ -20,7 +20,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "2.0.19",
+    "aws-sdk": "2.0.25",
+    "dynamodb-doc": "awslabs/dynamodb-document-js-sdk",
     "lodash": "2.4.x",
     "joi": "2.9.x",
     "node-uuid": "1.4.x",
@@ -29,12 +30,10 @@
   },
   "devDependencies": {
     "chai": "1.x.x",
-    "grunt": "0.4.x",
-    "grunt-cli": "0.1.x",
-    "grunt-contrib-jshint": "0.10.x",
-    "grunt-contrib-watch": "0.6.x",
-    "grunt-simple-mocha": "0.4.x",
-    "mocha": "1.x.x",
-    "sinon": "1.9.x"
+    "jscoverage": "^0.5.9",
+    "jshint": "2.x.x",
+    "jshint-stylish": "^1.0.0",
+    "mocha": "2.x.x",
+    "sinon": "1.11.x"
   }
 }
